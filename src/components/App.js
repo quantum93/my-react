@@ -3,6 +3,7 @@ import Header from './Header';
 import KegList from './KegList';
 import { Switch, Route } from 'react-router-dom';
 import NewKegForm from './NewKegForm';
+import Error404 from './Error404';
 
 function App() {
   return(
@@ -11,6 +12,7 @@ function App() {
       <Switch>
         <Route exact path='/' component={KegList} />
         <Route exact path='/newkeg' component={NewKegForm} />
+        <Route component={Error404} />
       </Switch>
     </div>
   );
