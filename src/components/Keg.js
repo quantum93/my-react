@@ -12,6 +12,9 @@ const Keg = (props) => {
 
   return (
   <div style={myStyle}>
+
+  <style jsx> { `div {background-color: red;}` } </style>
+
     <p>{props.kegName}</p>
     <p>{props.brand}</p>
     <p>{props.price}</p>
