@@ -1,4 +1,5 @@
 import React from 'react';
+import NewKegForm from './NewKegForm'
 import ConfirmationQuestions from './ConfirmationQuestions';
 
 class NewKegControl extends React.Component {
@@ -15,9 +16,17 @@ class NewKegControl extends React.Component {
   // }
 
   render() {
+
+    let currentlyVisibleContent = null;
+    if (this.state.formVisibleOnPage) {
+      currentlyVisibleContent = <NewKegForm />;
+    } else {
+      currentlyVisibleContent = <ConfirmationQuestions />;
+    }
+
     return (
       <div>
-        <ConfirmationQuestions />
+        {currentlyVisibleContent}
       </div>
     );
   }
