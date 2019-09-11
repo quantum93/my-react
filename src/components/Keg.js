@@ -1,8 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Keg = (props) => { return (
-  <div>
+const Keg = (props) => {
+  
+  let myStyle = {
+    backgroundColor: '#ecf0f1',
+    fontFamily: 'sans-serif',
+    paddingTop: '50px',
+    textAlign: 'center'
+  }
+
+  return (
+  <div style={myStyle}>
     <p>{props.kegName}</p>
     <p>{props.brand}</p>
     <hr/>
