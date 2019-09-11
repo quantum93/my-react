@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Header';
 import KegList from './KegList';
 import { Switch, Route } from 'react-router-dom';
+import NewKegForm from './NewKegForm';
 
 function App() {
   return(
