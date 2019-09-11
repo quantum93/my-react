@@ -12,7 +12,7 @@ function App() {
       <Header />
       <Switch>
         <Route exact path='/' component={KegList} />
-        <Route exact path='/newkeg' component={NewKegForm} />
+        <Route exact path='/newkeg' component={NewKegControl} />
         <Route component={Error404} />
       </Switch>
     </div>
