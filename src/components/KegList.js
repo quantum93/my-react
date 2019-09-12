@@ -21,6 +21,7 @@ const KegList = (props) => {
              alcoholContent={keg.alcoholContent}
              pints={keg.pints}
              formattedWaitTime={keg.formattedWaitTime}
+             currentRouterPath={props.currentRouterPath}
              key={keg.id} />
       )}
     </div>
@@ -29,6 +30,7 @@ const KegList = (props) => {
 
 KegList.propTypes = {
   kegList: PropTypes.array
+  currentRouterPath: PropTypes.string
 };
 
 export default KegList;

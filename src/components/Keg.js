@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Moment from 'moment';
+// import Moment from 'moment';
 
 const Keg = (props) => {
 
@@ -26,7 +26,7 @@ const Keg = (props) => {
   </div>
 )}
 
-  const displayTimeOpen = (timeOpen) => { timeOpen.from(new Moment(), true); }
+  // const displayTimeOpen = (timeOpen) => { timeOpen.from(new Moment(), true); }
 
 Keg.propTypes = {
   kegName: PropTypes.string,
@@ -35,6 +35,7 @@ Keg.propTypes = {
   alcoholContent: PropTypes.number,
   pints: PropTypes.number,
   formattedWaitTime: PropTypes.string.isRequired,
+  currentRouterPath: PropTypes.string
 }
 
 export default Keg;

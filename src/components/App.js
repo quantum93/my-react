@@ -5,7 +5,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import Error404 from './Error404';
 import NewKegControl from './NewKegControl';
-import Moment from 'moment';
+// import Moment from 'moment';
 
 import Admin from './Admin';
 
@@ -44,7 +44,14 @@ class App extends React.Component {
       <Switch>
       <Route exact path='/' render={()=><KegList kegList={this.state.masterKegList} />} />
       <Route exact path='/newkeg' render={()=><NewKegControl onNewKegCreation={this.handleAddingNewKegToList} />} />
-      <Route exact path='/admin' render={()=><Admin kegList={this.state.masterKegList} />} />
+
+      <Route exact path='/admin' render={(props)=>
+        <Admin
+          kegList={this.state.masterKegList}
+          currentRouterPath={props.location.pathname}
+        />}
+      />
+
       <Route component={Error404} />
       </Switch>
       </div>
