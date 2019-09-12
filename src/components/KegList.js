@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 // ]
 
 const KegList = (props) => {
-
+  console.log(props.kegList);
   return (
     <div>
       <hr/>
@@ -20,7 +20,7 @@ const KegList = (props) => {
              price={keg.price}
              alcoholContent={keg.alcoholContent}
              pints={keg.pints}
-             key={index} />
+             key={keg.id} />
       )}
     </div>
   );
