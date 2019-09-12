@@ -6,17 +6,25 @@ import { Switch, Route } from 'react-router-dom';
 import Error404 from './Error404';
 import NewKegControl from './NewKegControl';
 
-function App() {
-  return(
-    <div>
+class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = { masterKegList: [] };
+  }
+
+  render() {
+    return(
+      <div>
       <Header />
       <Switch>
-        <Route exact path='/' component={KegList} />
-        <Route exact path='/newkeg' component={NewKegControl} />
-        <Route component={Error404} />
+      <Route exact path='/' component={KegList} />
+      <Route exact path='/newkeg' component={NewKegControl} />
+      <Route component={Error404} />
       </Switch>
-    </div>
-  );
+      </div>
+    );
+  }
 }
 
 export default App;
