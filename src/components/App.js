@@ -7,6 +7,8 @@ import Error404 from './Error404';
 import NewKegControl from './NewKegControl';
 import Moment from 'moment';
 
+import Admin from './Admin';
+
 class App extends React.Component {
 
   constructor(props) {
@@ -42,6 +44,7 @@ class App extends React.Component {
       <Switch>
       <Route exact path='/' render={()=><KegList kegList={this.state.masterKegList} />} />
       <Route exact path='/newkeg' render={()=><NewKegControl onNewKegCreation={this.handleAddingNewKegToList} />} />
+      <Route exact path='/admin' component={Admin} />
       <Route component={Error404} />
       </Switch>
       </div>
