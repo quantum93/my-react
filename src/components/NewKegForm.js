@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { v4 } from 'uuid';
+import Moment from 'moment';
 
 const NewKegForm = (props) => {
   let _kegName = null;
@@ -18,7 +19,8 @@ const NewKegForm = (props) => {
       price: _price.value,
       alcoholContent: _alcoholContent.value,
       pints: _pints.value,
-      id: v4()
+      id: v4(),
+      timeOpen:new Moment()
     });
 
     _kegName.value = '';

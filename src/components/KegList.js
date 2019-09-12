@@ -20,6 +20,7 @@ const KegList = (props) => {
              price={keg.price}
              alcoholContent={keg.alcoholContent}
              pints={keg.pints}
+             timeOpen={keg.timeOpen}
              key={keg.id} />
       )}
     </div>
