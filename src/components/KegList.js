@@ -29,7 +29,7 @@ const KegList = (props) => {
 }
 
 KegList.propTypes = {
-  kegList: PropTypes.array
+  kegList: PropTypes.array,
   currentRouterPath: PropTypes.string
 };
 

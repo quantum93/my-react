@@ -11,22 +11,36 @@ const Keg = (props) => {
     textAlign: 'center'
   }
 
-  return (
+  const kegInformation =
   <div style={myStyle}>
-
   <style jsx global> { `div {background-color: lightgreen;}` } </style>
+  <p>{props.kegName}</p>
+  <p>{props.brand}</p>
+  <p>{props.price}</p>
+  <p>{props.alcoholContent}</p>
+  <p>{props.pints}</p>
+  <h5>{props.formattedWaitTime} ago</h5>
+  <hr/>
+  </div>;
 
-    <p>{props.kegName}</p>
-    <p>{props.brand}</p>
-    <p>{props.price}</p>
-    <p>{props.alcoholContent}</p>
-    <p>{props.pints}</p>
-    <h5>{props.formattedWaitTime} ago</h5>
-    <hr/>
-  </div>
-)}
+  console.log("This is kegInformation: ", kegInformation);
 
-  // const displayTimeOpen = (timeOpen) => { timeOpen.from(new Moment(), true); }
+  if (props.currentRouterPath === '/admin') {
+    return (
+      <div onClick={() => {alert('hey, you just clicked the keg belonging to ' + props.kegName);}}>
+        {kegInformation}
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        {kegInformation}
+      </div>
+    );
+  }
+}
+
+// const displayTimeOpen = (timeOpen) => { timeOpen.from(new Moment(), true); }
 
 Keg.propTypes = {
   kegName: PropTypes.string,
