@@ -10,10 +10,7 @@ class NewKegControl extends React.Component {
     // this.handleClick = this.handleClick.bind(this);
   }
 
-  // handleClick = () => {
-  //   this.setState({formVisibleOnPage: true});
-  //   console.log('formVisibleOnPage is currently set to:' + this.state.formVisibleOnPage);
-  // }
+  handleTroubleshootingConfirmation = () => { this.setState({formVisibleOnPage: true}); }
 
   render() {
 
@@ -21,7 +18,7 @@ class NewKegControl extends React.Component {
     if (this.state.formVisibleOnPage) {
       currentlyVisibleContent = <NewKegForm />;
     } else {
-      currentlyVisibleContent = <ConfirmationQuestions />;
+      currentlyVisibleContent = <ConfirmationQuestions onTroubleshootingConfirmation={this.handleTroubleshootingConfirmation} />;
     }
 
     return (
