@@ -5,6 +5,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import Error404 from './Error404';
 import NewKegControl from './NewKegControl';
+import Moment from 'moment';
 
 class App extends React.Component {
 
@@ -16,9 +17,23 @@ class App extends React.Component {
 
   handleAddingNewKegToList = (newKeg) => {
     var newMasterKegList = this.state.masterKegList.slice();
+    newKeg.formattedWaitTime = (newKeg.timeOpen).fromNow(true)
     newMasterKegList.push(newKeg);
     this.setState({masterKegList: newMasterKegList});
   }
+
+  componentDidMount = () => {
+    this.waitTimeUpdateTimer = setInterval( () => this.updateKegElapsedWaitTime(), 60000 );
+  }
+
+  updateKegElapsedWaitTime = () => {
+     console.log("check");
+     let newMasterKegList = this.state.masterKegList.slice();
+     newMasterKegList.forEach( (keg) => keg.formattedWaitTime = (keg.timeOpen).fromNow(true) );
+     this.setState({masterKegList: newMasterKegList})
+   }
+
+   componentWillUnmount = () => { clearInterval(this.waitTimeUpdateTimer); }
 
   render() {
     return(
